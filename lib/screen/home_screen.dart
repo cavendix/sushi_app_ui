@@ -25,8 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Container(
                     // margin: EdgeInsets.only(left: 10),
-                    height: 40,
-                    width: 40,
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 10,
                   ),
                   Text(
-                    'Hi, Firda!',
+                    'Hi, Felicia!',
                     style: darkTextStyle.copyWith(
                         fontSize: 24, fontWeight: FontWeight.bold),
                   ),
@@ -69,13 +69,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.search, color: darkColor),
-                        border: InputBorder.none,
-                        hintText: 'Search your sushi',
-                        hintStyle: TextStyle(
-                          fontSize: 20,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 3.5),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search, color: darkColor),
+                          border: InputBorder.none,
+                          hintText: 'Search your sushi',
+                          hintStyle: TextStyle(
+                            fontSize: 15,
+                          ),
                         ),
                       ),
                     ),
@@ -84,20 +87,63 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 20,
                   ),
                   Container(
-                      child: Padding(
-                    padding: EdgeInsets.only(right: 24),
-                    child: Row(
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 24),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Categories',
+                            style: darkTextStyle.copyWith(
+                                fontSize: 30, fontWeight: FontWeight.bold),
+                          ),
+                          Spacer(),
+                          Text('See all', style: darkTextStyle),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    height: 100,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
                       children: [
-                        Text(
-                          'Categories',
-                          style: darkTextStyle.copyWith(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                        Categories(
+                          Category(
+                              id: 1,
+                              name: 'Salmon',
+                              imageUrl: 'assets/icon_salmon.png'),
                         ),
-                        Spacer(),
-                        Text('See all', style: darkTextStyle),
+                        Categories(
+                          Category(
+                              id: 2,
+                              name: 'Caviar',
+                              imageUrl: 'assets/icon_caviar.png'),
+                        ),
+                        Categories(
+                          Category(
+                              id: 3,
+                              name: 'Rice',
+                              imageUrl: 'assets/icon_rice.png'),
+                        ),
+                        Categories(
+                          Category(
+                              id: 4,
+                              name: 'Octopus',
+                              imageUrl: 'assets/icon_octo.png'),
+                        ),
+                        Categories(
+                          Category(
+                              id: 5,
+                              name: 'Shrimp',
+                              imageUrl: 'assets/icon_shrimp.png'),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
                       ],
                     ),
-                  )),
+                  )
                 ],
               ),
             )
