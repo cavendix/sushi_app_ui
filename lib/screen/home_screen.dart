@@ -143,7 +143,73 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 24),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Top Sushi',
+                            style: darkTextStyle.copyWith(
+                                fontSize: 30, fontWeight: FontWeight.bold),
+                          ),
+                          Spacer(),
+                          Text('See all', style: darkTextStyle),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 250,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        SushiCard(
+                          Sushi(
+                            id: 1,
+                            name: 'Sushi Octopus',
+                            imageUrl: 'assets/sushi1.png',
+                            ingredients: 'Rice + Octopus',
+                            price: '\$6.50',
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        SushiCard(
+                          Sushi(
+                            id: 2,
+                            name: 'Sushi Avocado',
+                            imageUrl: 'assets/sushi2.png',
+                            ingredients: 'Rice + Salmon',
+                            price: '\$5.50',
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        SushiCard(
+                          Sushi(
+                            id: 3,
+                            name: 'Sushi Salmon',
+                            imageUrl: 'assets/sushi3.png',
+                            ingredients: 'Rice + Salmon + Avocado',
+                            price: '\$6.00',
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )
